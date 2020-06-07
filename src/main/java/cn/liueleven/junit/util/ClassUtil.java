@@ -36,6 +36,9 @@ public class ClassUtil {
         while (iterator.hasNext()) {
             Class cls = ((Class) iterator.next());
             Class<?> superclass = cls.getSuperclass();
+            if (superclass == null)  {
+                continue;
+            }
             if (superclass.getName().equals(target.getName())) {
                 subList.add(cls);
             }

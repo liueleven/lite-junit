@@ -28,7 +28,10 @@ public class TestCaseStater extends TestCaseStartService{
 
     private List<Class> executeClassList;
 
-    public void start() {
+    private Class cls;
+
+    public void start(Class cls) {
+        this.cls = cls;
         super.run();
     }
 
@@ -84,12 +87,19 @@ public class TestCaseStater extends TestCaseStartService{
         }
     }
 
+
+    private String getPackageRoot() {
+        String name = cls.getPackage().getName();
+        int i = name.indexOf(".");
+        return name.substring(0,i);
+    }
+
     @Override
     protected void statisticTestCase() {
 
         Set<Class<?>> classes = null;
         try {
-            classes = ClassUtil.getClasses("cn.liueleven.junit.util.core");
+            classes = ClassUtil.getClasses(getPackageRoot());
         } catch (IOException e) {
             e.printStackTrace();
             throw new TestCaseException("获取所有类失败");

@@ -11,7 +11,7 @@ import cn.liueleven.junit.model.TestCase;
 public class TestCaseStaterTest {
 
     public static void main(String[] args) {
-        new TestCaseStater().start();
+        new TestCaseStater().start(TestCaseStaterTest.class);
     }
 
 
