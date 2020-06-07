@@ -1,6 +1,6 @@
-package cn.liueleven.junit.util.core;
+package cn.liueleven.junit.core;
 
-import cn.liueleven.junit.core.TestCaseStater;
+import cn.liueleven.junit.Assert;
 import cn.liueleven.junit.model.TestCase;
 
 /**
@@ -39,7 +39,7 @@ public class TestCaseStaterTest {
 
         @Override
         public void setUp() {
-            msg = " my junit";
+            msg = "my junit";
         }
 
         @Override
@@ -49,8 +49,8 @@ public class TestCaseStaterTest {
 
         public void testHello() {
             Foo foo = new Foo();
-            foo.hello(msg);
-            foo.hello2(msg);
+            Assert.assertEquals(msg,foo.hello(msg));
+            Assert.assertEquals("hello"+msg,foo.hello2(msg));
         }
 
         public void testHello2() {
@@ -62,22 +62,22 @@ public class TestCaseStaterTest {
 
     public static class Foo extends Bar {
 
-        public void hello(String msg) {
-            System.out.println("Foo.hello " + msg);
+        public String hello(String msg) {
+            return msg;
         }
 
-        public void hello2(String msg) {
-            System.out.println("Foo.hello2 " + msg);
+        public String hello2(String msg) {
+            return "hello"+msg;
         }
     }
 
     public static class Bar {
         public void setUp() {
-            System.out.println("Bar.setUp");
+//            System.out.println("Bar.setUp");
         }
 
         public void tearDown() {
-            System.out.println("Bar.tearDown");
+//            System.out.println("Bar.tearDown");
         }
     }
 }

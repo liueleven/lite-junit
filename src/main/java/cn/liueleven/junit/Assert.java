@@ -1,4 +1,4 @@
-package cn.liueleven.junit.util;
+package cn.liueleven.junit;
 
 import cn.liueleven.junit.core.exception.TestCaseAssertException;
 

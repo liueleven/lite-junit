@@ -9,7 +9,7 @@ import cn.liueleven.junit.model.TestCase;
 import cn.liueleven.junit.core.rule.ClassRule;
 import cn.liueleven.junit.core.rule.MethodRule;
 import cn.liueleven.junit.core.rule.RulePipeline;
-import cn.liueleven.junit.util.ClassUtil;
+import cn.liueleven.junit.ClassUtil;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -78,12 +78,12 @@ public class TestCaseStater extends TestCaseStartService{
                 throw new TestCaseException(clazz.getName() + " 反射创建类实例失败");
 
             }
-            invokeMethodByName(clazz,newInstance, TestCaseConstants.METHOD_SET_UP);
             for (Method method : methods) {
+                invokeMethodByName(clazz,newInstance, TestCaseConstants.METHOD_SET_UP);
                 MethodInvoke methodInvoke = new MethodInvoke();
                 methodInvoke.invoke(method,newInstance);
+                invokeMethodByName(clazz,newInstance, TestCaseConstants.METHOD_TEAR_DOWN);
             }
-            invokeMethodByName(clazz,newInstance, TestCaseConstants.METHOD_TEAR_DOWN);
         }
     }
 

@@ -33,7 +33,7 @@ public class MethodInvoke {
             collectInfo.successCountIncrement();
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("方法调用异常：" + method.getDeclaringClass().getName());
+            System.out.println("方法调用异常：" + method.getDeclaringClass().getName()+"#"+method.getName());
             collectInfo.failCountIncrement();
         }
 

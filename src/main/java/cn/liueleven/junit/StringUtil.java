@@ -1,4 +1,4 @@
-package cn.liueleven.junit.util;
+package cn.liueleven.junit;
 
 /**
  * @description: 一定要写注释啊

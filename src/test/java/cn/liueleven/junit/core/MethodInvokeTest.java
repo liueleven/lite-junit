@@ -1,4 +1,4 @@
-package cn.liueleven.junit.util.core;
+package cn.liueleven.junit.core;
 
 /**
  * @description: 一定要写注释啊
@@ -16,7 +16,7 @@ public class MethodInvokeTest {
         private String name;
 
         public String getName() {
-            System.out.println("invoke getName");
+//            System.out.println("invoke getName");
             return name;
         }
 

@@ -8,11 +8,11 @@ package cn.liueleven.junit.model;
 public class TestCase {
 
     public void setUp() {
-        System.out.println("execute TestCase.setUp");
+//        System.out.println("execute TestCase.setUp");
     }
 
     public void tearDown() {
-        System.out.println("execute TestCase.tearDown");
+//        System.out.println("execute TestCase.tearDown");
     }
 
 

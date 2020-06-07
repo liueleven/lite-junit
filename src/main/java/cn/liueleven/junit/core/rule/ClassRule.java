@@ -23,8 +23,8 @@ public class ClassRule implements Rule {
         // 获取类的全名，例如：cn.liueleven.junit.util.core.TestCaseStaterTest$FooTest
         String name = clazz.getName();
         if (name.startsWith(TestCaseConstants.PACKAGE)) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 }

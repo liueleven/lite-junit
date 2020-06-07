@@ -1,5 +1,8 @@
 package cn.liueleven.junit.util;
 
+import cn.liueleven.junit.Assert;
+import cn.liueleven.junit.ClassUtil;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
